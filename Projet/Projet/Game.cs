@@ -9,11 +9,14 @@ namespace Projet
     class Game
     {
         public Joueur player;
-        public Map map;
+        private Map map;
+        private Menu menu;
         
         public Game()
         {
-
+            map = new Map();
+            player = new Joueur("Machin", "", 5);
+            menu = new Menu();
         }
 
         public void Deplacement()

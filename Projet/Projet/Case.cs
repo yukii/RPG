@@ -12,6 +12,7 @@ namespace Projet
         public Ennemy ennemy;
         public Quete quete;
         public string obj;
+        public Boss boss;
 
         public Case(Personnage pnj)
         {
@@ -25,6 +26,14 @@ namespace Projet
             this.ennemy = enn;
             this.obj = "";
             this.pnj = null;
+        }
+
+        public Case(Boss boss)
+        {
+            ennemy = null;
+            obj = "";
+            this.pnj = null;
+            this.boss = boss;
         }
 
         public Case(Quete quest)

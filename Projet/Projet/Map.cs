@@ -58,10 +58,14 @@ namespace Projet
                 }
             }
 
+            //placements
             All_Ennemy();
             All_Boss();
             All_PNJ();
+            All_Quete();
+            All_Object();
             All_Meuble();
+            All_Pieces();
 
             for (int i = 0; i < 10; i++)
             {
@@ -84,6 +88,7 @@ namespace Projet
             }
         }
 
+        //placements des ennemy
         private void All_Ennemy()
         {
             #region Etage 1
@@ -343,6 +348,7 @@ namespace Projet
             #endregion
         }
 
+        //placements des PNJ
         private void All_PNJ()
         {
             //etage 1
@@ -373,7 +379,7 @@ namespace Projet
             pnjRand = new Personnage("Charif", "Il y a des boissons, de la nourriture et du café en bas.", 0);
             myMap[3][1, 4] = new Case(pnjRand);
 
-            pnjRand = new Personnage("Sumeet", "Je peux te spoiler ?", 0);
+            pnjRand = new Personnage("Salim", "Je peux te spoiler ?", 0);
             myMap[3][2, 3] = new Case(pnjRand);
 
             pnjRand = new Personnage("Aviel", "Je suis un élève fantôme, tu ne me vois pas.", 0);
@@ -411,10 +417,11 @@ namespace Projet
 
         }
 
+        //placements des Boss 
         private void All_Boss()
         {
             //etage 4
-            ennmyRand = new Ennemy("Nathalie", "J'ai pas encore justifié tes absences mais tu peux prendre un bonbon.", 10, 24, 16, 10, "", 10, 5);
+            ennmyRand = new Boss("Nathalie", "J'ai pas encore justifié tes absences mais tu peux prendre un bonbon.", 10, 24, 16, 10, "", "des bonbons", 10, 5);
             ennmyRand.AddAtk("Absences", 15, 33);
             ennmyRand.AddAtk("Retards", 15, 33);
             ennmyRand.AddAtk("Notes en retard", 20, 33);
@@ -422,21 +429,21 @@ namespace Projet
             myMap[3][3, 2] = new Case(ennmyRand);
 
             //etage 3
-            ennmyRand = new Ennemy("Clement", "Vous ? Ici ?", 25, 50, 34, 26, "", 25, 10);
+            ennmyRand = new Boss("Clement", "Vous ? Ici ?", 25, 50, 34, 26, "", "une montre", 25, 10);
             ennmyRand.AddAtk("Hurlement", 10, 45);
             ennmyRand.AddAtk("Mots compliqués", 20, 45);
             ennmyRand.AddAtk("Crises de stresse", 20, 10);
             ennmyRand.AddAtk("Malus au mémoire", -4, 0);
             myMap[2][3, 2] = new Case(ennmyRand);
 
-            ennmyRand = new Ennemy("Matthias", "Je ne peux pas te payer mais tu as le droit à un mug !", 25, 50, 34, 26, "mug", 25, 10);
+            ennmyRand = new Boss("Matthias", "Je ne peux pas te payer mais tu as le droit à un mug !", 25, 50, 34, 26, "mug", "un gateau au chocolat", 25, 10);
             ennmyRand.AddAtk("Armogaste", 2, 10);
             ennmyRand.AddAtk("Des particules !!", 20, 50);
             ennmyRand.AddAtk("Eclair Photoshop !!", 25, 30);
             ennmyRand.AddAtk("Seek The Stars", 30, 0);
             myMap[2][3, 3] = new Case(ennmyRand);
 
-            ennmyRand = new Ennemy("Loic", "Si on pouvait en finir rapidemment T.T ...", 25, 50, 34, 26, "", 25, 10);
+            ennmyRand = new Boss("Loic", "Si on pouvait en finir rapidemment T.T ...", 25, 50, 34, 26, "", "une licorne", 25, 10);
             ennmyRand.AddAtk("Je veux jouer à Red Dead !!", 6, 50);
             ennmyRand.AddAtk("Role Master", 0, 30);
             ennmyRand.AddAtk("Lucha Libre", 20, 20);
@@ -444,14 +451,14 @@ namespace Projet
             myMap[2][3, 4] = new Case(ennmyRand);
 
             //etage 2
-            ennmyRand = new Ennemy("Renaud", "", 20, 38, 27, 20, "", 20, 10);
+            ennmyRand = new Boss("Renaud", "", 20, 38, 27, 20, "", "une feuille de cours", 20, 10);
             ennmyRand.AddAtk("No cours", 15, 25);
             ennmyRand.AddAtk("PHP Master", 10, 50);
             ennmyRand.AddAtk("Je suis un debogueur !!", 15, 25);
             ennmyRand.AddAtk("Tu as triché !!", 25, 0);
             myMap[1][3, 0] = new Case(ennmyRand);
 
-            ennmyRand = new Ennemy("Damien", "", 20, 38, 27, 20, "", 20, 10);
+            ennmyRand = new Boss("Damien", "", 20, 38, 27, 20, "", "une fausse signature", 20, 10);
             ennmyRand.AddAtk("Tu ne sais pas compter comme Emmanuel.", 1, 50);
             ennmyRand.AddAtk("Damien mène l'enquête", 10, 25);
             ennmyRand.AddAtk("Ma barbe est sublime ^^", 15, 25);
@@ -459,7 +466,7 @@ namespace Projet
             myMap[1][5, 0] = new Case(ennmyRand);
 
             //etage 1
-            ennmyRand = new Ennemy("Marie-Pierre", "Ta carte étudiante est ici.", 30, 60, 40, 34, "carte étudiante", 30, 10);
+            ennmyRand = new Boss("Marie-Pierre", "Ta carte étudiante est ici.", 30, 60, 40, 34, "carte étudiante", "", 30, 10);
             ennmyRand.AddAtk("Paperasse", 20, 50);
             ennmyRand.AddAtk("Autorité", -2, 10);
             ennmyRand.AddAtk("Clin d'oeil", 30, 30);
@@ -467,32 +474,87 @@ namespace Projet
             myMap[0][4, 8] = new Case(ennmyRand);
         }
 
+        //placement des perso avec des quetes
         private void All_Quete()
         {
             //etage 1
-            myMap[0][3, 5] = new Case(new Quete("Maxence", "Je te fais  une fausse signature en échange d'un coca.", 0, new string[1] { "coca" }, "fausse signature"));
+            myMap[0][3, 5] = new Case(new Quete("Elève fantôme", "Je te fais  une fausse signature en échange d'un coca.", 0, new string[1] { "un coca" }, "une fausse signature"));
+            myMap[0][1, 8] = new Case(new Quete("Amoureux", "J'ai perdu mon amour .... :'( ", 0, new string[1] { "une lettre d'amour" }, "love"));
+            myMap[0][8, 8] = new Case(new Quete("Recruteur", "Vous avez pas le profil.", 0, new string[5] { "un cv", "une lettre de motivation", "php skill", "linux skill", "windows skill" }, "un contrat"));
 
             //etage 2
-            myMap[1][5, 3] = new Case(new Quete("Ludo", "Je cherche les aiguilles de ma montre", 0, new string[2] { "grande aiguille", "petite aiguille" }, "montre"));
+            myMap[1][5, 3] = new Case(new Quete("Ludo", "Je cherche les aiguilles de ma montre", 0, new string[2] { "une grande aiguille", "une petite aiguille" }, " une montre"));
+            myMap[1][1, 6] = new Case(new Quete("Sumeet", "J'ai soif ! Va me chercher à boire.", 0, new string[1] { "des bières"}, "chaussures"));
+            myMap[1][2, 9] = new Case(new Quete("Ryan", "Je veux des nuggest :3", 0, new string[1] { "des nuggest" }, "des ciseaux"));
 
             //etage 3
-            myMap[2][5, 3] = new Case(new Quete("Julie", "J'ai besoin d'ingrédient pour faire un gateau au chocolat.", 0, new string[3] { "farine", "chocolat", "oeuf" }, "gateau au chocolat"));
+            myMap[2][5, 3] = new Case(new Quete("Julie", "J'ai besoin d'ingrédient pour faire un gateau au chocolat.", 0, new string[3] { "de la farine", "du chocolat", "des oeuf" }, "un gateau au chocolat"));
+            myMap[2][0, 4] = new Case(new Quete("Elise", "J'ai perdu mon passeport.", 0, new string[1] { "le passeport d'Elise" }, "une feuille de cours"));
+            myMap[2][1, 6] = new Case(new Quete("Yasmiina", "Il faudrait un dépliant Ynov, tu l'as ?", 0, new string[1] { "un depliant Ynov" }, "des bonbons"));
+            myMap[2][4, 0] = new Case(new Quete("Matthieu", "Trouve moi une feuille et je te fais un cours.", 0, new string[1] { "une feuille" }, "une feuille de cours"));
+            myMap[2][6, 1] = new Case(new Quete("Antoine", "Achete moi un mars.", 0, new string[1] { "un mars" }, "un skin LOL"));
+            myMap[2][7, 5] = new Case(new Quete("Julien", "Je veux un jeu parfait !!", 0, new string[] { "ET sur Atari" }, "la reconnaissance"));
+
 
             //etage 4
             myMap[3][7, 3] = new Case(new Quete("Raphaelle", "J'ai perdu ma corne.", 0, new string[1] { "corne de licorne" }, "licorne"));
+            myMap[3][8, 3] = new Case(new Quete("John", "Tu n'aurais pas vu mon bouquin d'histoire ?", 0, new string[] { "un bouquin d'histoire" }, "un cd de Beyonce"));
         }
 
+        //placement des objets
         private void All_Object()
         {
             //etage 1
+            myMap[0][0, 3] = new Case("un cv");
+            myMap[0][3, 1] = new Case("une balle de ping pong");
+            myMap[0][3, 3] = new Case("une raquette de ping pong");
+            myMap[0][5, 4] = new Case("une table de ping pong");
+            myMap[0][2, 8] = new Case("une feuille");
+            myMap[0][3, 9] = new Case("une replique d'Excalibur");
+            myMap[0][9, 9] = new Case("un canapé");
+            myMap[0][9, 4] = new Case("un coca périmé");
+            myMap[0][1, 5] = new Case("un bouquin d'histoire");
 
             //etage 2
+            myMap[1][8, 0] = new Case("une lettre d'amour");
+            myMap[1][0, 6] = new Case("le passeport d'Elise");
+            myMap[1][4, 3] = new Case("une petite aiguille");
+            myMap[1][6, 7] = new Case("php skill");
+            myMap[1][7, 0] = new Case("dossier d'inscription");
+            myMap[1][7, 2] = new Case("un corne de licorne");
+            myMap[1][7, 5] = new Case("un truc blanc visqueux");
+            myMap[1][8, 1] = new Case("une carte Magic");
+            myMap[1][8, 2] = new Case("une carte Yu-Gi-Oh");
+            myMap[1][8, 3] = new Case("une carte Pokemon");
+            myMap[1][8, 4] = new Case("une carte Carapuce");
+            myMap[1][8, 5] = new Case("du chocolat");
 
             //etage 3
+            myMap[2][9, 0] = new Case("un coca");
+            myMap[2][9, 1] = new Case("de la farine");
+            myMap[2][9, 7] = new Case("une grande aiguille");
+            myMap[2][8, 7] = new Case("des bières");
+            myMap[2][6, 6] = new Case("un mars");
+            myMap[2][2, 1] = new Case("un depliant Ynov");
+            myMap[2][1, 5] = new Case("une souris");
+
 
             //etage 4
+            myMap[3][1, 8] = new Case("une lettre de motivation");
+            myMap[3][1, 3] = new Case("The Scroll of Stupidity");
+            myMap[3][2, 1] = new Case("des nuggest");
+            myMap[3][3, 0] = new Case("ET sur Atari");
+            myMap[3][6, 0] = new Case("une carte de Kanto");
+            myMap[3][7, 1] = new Case("des oeufs");
+            myMap[3][8, 1] = new Case("un passe-partout");
+            myMap[3][9, 0] = new Case("un cours liquide");
+            myMap[3][9, 1] = new Case("linus skill");
+            myMap[3][9, 3] = new Case("windows skill");
+            myMap[3][9, 5] = new Case("un sac de pc");
+            myMap[3][9, 6] = new Case("une fiche de perso");
         }
 
+        //placement des meubles
         private void All_Meuble()
         {
             //etage 1
@@ -538,6 +600,74 @@ namespace Projet
             myMap[3][6, 9] = new Case("meuble");
             myMap[3][7, 0] = new Case("meuble");
             myMap[3][7, 9] = new Case("meuble");
+        }
+
+        //placement des pièces
+        private void All_Pieces()
+        {
+            Case pieces = new Case("2 pieces");
+            //etage 1
+            myMap[0][0, 6] = pieces;
+            myMap[0][2, 1] = pieces;
+            myMap[0][4, 0] = pieces;
+            myMap[0][6, 2] = pieces;
+            myMap[0][2, 1] = pieces;
+            myMap[0][8, 0] = pieces;
+            myMap[0][8, 1] = pieces;
+            myMap[0][8, 2] = pieces;
+            myMap[0][9, 2] = pieces;
+
+            //etage 2
+            myMap[1][9, 0] = pieces;
+            myMap[1][9, 1] = pieces;
+            myMap[1][9, 2] = pieces;
+            myMap[1][9, 3] = pieces;
+            myMap[1][9, 4] = pieces;
+            myMap[1][9, 5] = pieces;
+
+            //etage 3
+            myMap[2][1, 0] = pieces;
+            myMap[2][3, 6] = pieces;
+            myMap[2][7, 0] = pieces;
+            myMap[2][7, 1] = pieces;
+            myMap[2][8, 5] = pieces;
+            myMap[2][8, 8] = pieces;
+            myMap[2][8, 9] = pieces;
+
+            //etage 4
+            myMap[3][0, 2] = pieces;
+            myMap[3][1, 2] = pieces;
+            myMap[3][1, 0] = pieces;
+            myMap[3][1, 1] = pieces;
+            myMap[3][9, 7] = pieces;
+            myMap[3][8, 7] = pieces;
+            myMap[3][8, 8] = pieces;
+            myMap[3][8, 9] = pieces;
+
+        }
+
+
+        public void PrintMap(int e, int x, int y)
+        {
+            string north = "";
+            string south = "";
+            string east = "";
+            string west = "";
+
+            if (y == 0)
+                north = "  __ \n";
+            else if (y == 9)
+                south = "  __ \n";
+            else
+            {
+                north = "  | | \n";
+                south = "  | | \n";
+            }
+            if (x == 9)
+            {
+                east = "|";
+
+            }
         }
     }
 }

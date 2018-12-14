@@ -10,8 +10,10 @@ namespace Projet
     {
         static void Main(string[] args)
         {
-            Map map = new Map();
-            map.Init();
+            //Map map = new Map();
+            //map.Init();
+            //Menu menu = new Menu();
+            Console.Write("__ \n ftgyhu");
             Console.Read();
         }
     }
