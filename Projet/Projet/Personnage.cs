@@ -8,9 +8,9 @@ namespace Projet
 {
     class Personnage
     {
-        protected string name;
-        protected string phrase;
-        protected int energy;
+        public string name;
+        public string phrase;
+        public int energy;
 
         public Personnage(string name, string ph, int energy)
         {
@@ -21,7 +21,7 @@ namespace Projet
 
         public void AffichPh()
         {
-            Console.WriteLine(phrase);
+            Console.WriteLine(name + " : " + phrase);
         }
 
         //pvAdv, defAdv = pv et def de l'adversaire
@@ -29,11 +29,18 @@ namespace Projet
         //atkMoi = mon atk
         public static int Attack(int pvAdv, int defAdv, int myATK, int atkMoi)
         {
-            int damage = atkMoi + myATK - defAdv;
-            if (damage > 0)
-                pvAdv -= damage;
-
+            if (myATK != 0)
+            {
+                int damage = atkMoi + myATK - defAdv;
+                if (damage > 0)
+                    pvAdv -= damage;
+            }
             return pvAdv;
+        }
+
+        public static bool AttackSpe(int energy, int energyMax)
+        {
+            return energy >= energyMax;
         }
 
     }

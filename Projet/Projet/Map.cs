@@ -20,6 +20,7 @@ namespace Projet
         {
             this.etages = 4;
             this.cote = 10;
+            Init();
         }
         
         public void Init()
@@ -66,26 +67,7 @@ namespace Projet
             All_Object();
             All_Meuble();
             All_Pieces();
-
-            for (int i = 0; i < 10; i++)
-            {
-                for (int j = 0; j < 10; j++)
-                {
-                    if (etage4[i, j].ennemy != null)
-                    {
-                        Console.Write("E|");
-                    }
-                    else if (etage4[i,j].pnj != null)
-                    {
-                        Console.Write("P|");
-                    }
-                    else
-                    {
-                        Console.Write(" |");
-                    }
-                }
-                Console.WriteLine();
-            }
+            
         }
 
         //placements des ennemy
@@ -421,57 +403,57 @@ namespace Projet
         private void All_Boss()
         {
             //etage 4
-            ennmyRand = new Boss("Nathalie", "J'ai pas encore justifié tes absences mais tu peux prendre un bonbon.", 10, 24, 16, 10, "", "des bonbons", 10, 5);
-            ennmyRand.AddAtk("Absences", 15, 33);
-            ennmyRand.AddAtk("Retards", 15, 33);
-            ennmyRand.AddAtk("Notes en retard", 20, 33);
-            ennmyRand.AddAtk("Année perdue", 25, 0);
-            myMap[3][3, 2] = new Case(ennmyRand);
+            Boss bossRand = new Boss("Nathalie", "J'ai pas encore justifié tes absences mais tu peux prendre un bonbon.", 10, 24, 16, 10, "un morceau de feuille", "des bonbons", 10, 5);
+            bossRand.AddAtk("Absences", 15, 33);
+            bossRand.AddAtk("Retards", 15, 33);
+            bossRand.AddAtk("Notes en retard", 20, 33);
+            bossRand.AddAtk("Année perdue", 25, 0);
+            myMap[3][3, 2] = new Case(bossRand);
 
             //etage 3
-            ennmyRand = new Boss("Clement", "Vous ? Ici ?", 25, 50, 34, 26, "", "une montre", 25, 10);
-            ennmyRand.AddAtk("Hurlement", 10, 45);
-            ennmyRand.AddAtk("Mots compliqués", 20, 45);
-            ennmyRand.AddAtk("Crises de stresse", 20, 10);
-            ennmyRand.AddAtk("Malus au mémoire", -4, 0);
-            myMap[2][3, 2] = new Case(ennmyRand);
+            bossRand = new Boss("Clement", "Vous ? Ici ?", 25, 50, 34, 26, "un morceau de feuille", "une montre", 25, 10);
+            bossRand.AddAtk("Hurlement", 10, 45);
+            bossRand.AddAtk("Mots compliqués", 20, 45);
+            bossRand.AddAtk("Crises de stresse", 20, 10);
+            bossRand.AddAtk("Malus au mémoire", -4, 0);
+            myMap[2][3, 2] = new Case(bossRand);
 
-            ennmyRand = new Boss("Matthias", "Je ne peux pas te payer mais tu as le droit à un mug !", 25, 50, 34, 26, "mug", "un gateau au chocolat", 25, 10);
-            ennmyRand.AddAtk("Armogaste", 2, 10);
-            ennmyRand.AddAtk("Des particules !!", 20, 50);
-            ennmyRand.AddAtk("Eclair Photoshop !!", 25, 30);
-            ennmyRand.AddAtk("Seek The Stars", 30, 0);
-            myMap[2][3, 3] = new Case(ennmyRand);
+            bossRand = new Boss("Matthias", "Je ne peux pas te payer mais tu as le droit à un mug !", 25, 50, 34, 26, "mug", "un gateau au chocolat", 25, 10);
+            bossRand.AddAtk("Des particules !!", 20, 50);
+            bossRand.AddAtk("Armogaste", 2, 10);
+            bossRand.AddAtk("Eclair Photoshop !!", 25, 30);
+            bossRand.AddAtk("Seek The Stars", 30, 0);
+            myMap[2][3, 3] = new Case(bossRand);
 
-            ennmyRand = new Boss("Loic", "Si on pouvait en finir rapidemment T.T ...", 25, 50, 34, 26, "", "une licorne", 25, 10);
-            ennmyRand.AddAtk("Je veux jouer à Red Dead !!", 6, 50);
-            ennmyRand.AddAtk("Role Master", 0, 30);
-            ennmyRand.AddAtk("Lucha Libre", 20, 20);
-            ennmyRand.AddAtk("Unity Master", 30, 0);
-            myMap[2][3, 4] = new Case(ennmyRand);
+            bossRand = new Boss("Loic", "Si on pouvait en finir rapidemment T.T ...", 25, 50, 34, 26, "un morceau de feuille", "une licorne", 25, 10);
+            bossRand.AddAtk("Je veux jouer à Red Dead !!", 6, 50);
+            bossRand.AddAtk("Lucha Libre", 20, 20);
+            bossRand.AddAtk("Role Master", 0, 30);
+            bossRand.AddAtk("Unity Master", 30, 0);
+            myMap[2][3, 4] = new Case(bossRand);
 
             //etage 2
-            ennmyRand = new Boss("Renaud", "", 20, 38, 27, 20, "", "une feuille de cours", 20, 10);
-            ennmyRand.AddAtk("No cours", 15, 25);
-            ennmyRand.AddAtk("PHP Master", 10, 50);
-            ennmyRand.AddAtk("Je suis un debogueur !!", 15, 25);
-            ennmyRand.AddAtk("Tu as triché !!", 25, 0);
-            myMap[1][3, 0] = new Case(ennmyRand);
+            bossRand = new Boss("Renaud", "", 20, 38, 27, 20, "un morceau de feuille", "une feuille de cours", 20, 10);
+            bossRand.AddAtk("No cours", 15, 25);
+            bossRand.AddAtk("PHP Master", 10, 50);
+            bossRand.AddAtk("Je suis un debogueur !!", 15, 25);
+            bossRand.AddAtk("Tu as triché !!", 25, 0);
+            myMap[1][3, 0] = new Case(bossRand);
 
-            ennmyRand = new Boss("Damien", "", 20, 38, 27, 20, "", "une fausse signature", 20, 10);
-            ennmyRand.AddAtk("Tu ne sais pas compter comme Emmanuel.", 1, 50);
-            ennmyRand.AddAtk("Damien mène l'enquête", 10, 25);
-            ennmyRand.AddAtk("Ma barbe est sublime ^^", 15, 25);
-            ennmyRand.AddAtk("0 punitif", 30, 0);
-            myMap[1][5, 0] = new Case(ennmyRand);
+            bossRand = new Boss("Damien", "", 20, 38, 27, 20, "un morceau de feuille", "une fausse signature", 20, 10);
+            bossRand.AddAtk("Damien mène l'enquête", 10, 25);
+            bossRand.AddAtk("Ma barbe est sublime ^^", 15, 25);
+            bossRand.AddAtk("Tu ne sais pas compter comme Emmanuel.", 1, 50);
+            bossRand.AddAtk("0 punitif", 30, 0);
+            myMap[1][5, 0] = new Case(bossRand);
 
             //etage 1
-            ennmyRand = new Boss("Marie-Pierre", "Ta carte étudiante est ici.", 30, 60, 40, 34, "carte étudiante", "", 30, 10);
-            ennmyRand.AddAtk("Paperasse", 20, 50);
-            ennmyRand.AddAtk("Autorité", -2, 10);
-            ennmyRand.AddAtk("Clin d'oeil", 30, 30);
-            ennmyRand.AddAtk("Amour d'Adrien", 40, 0);
-            myMap[0][4, 8] = new Case(ennmyRand);
+            bossRand = new Boss("Marie-Pierre", "Ta carte étudiante est ici.", 30, 60, 40, 34, "carte étudiante", "", 30, 10);
+            bossRand.AddAtk("Paperasse", 20, 50);
+            bossRand.AddAtk("Autorité", -2, 10);
+            bossRand.AddAtk("Clin d'oeil", 30, 30);
+            bossRand.AddAtk("Amour d'Adrien", 40, 0);
+            myMap[0][4, 8] = new Case(bossRand);
         }
 
         //placement des perso avec des quetes
@@ -565,9 +547,17 @@ namespace Projet
             myMap[0][7, 8] = new Case("meuble");
             myMap[0][8, 5] = new Case("meuble");
 
+            myMap[0][0, 0] = new Case("escalier");
+            myMap[0][0, 1] = new Case("escalier");
+
             //etage 2
             myMap[1][7, 9] = new Case("meuble");
             myMap[1][6, 9] = new Case("meuble");
+
+            myMap[1][0, 0] = new Case("escalier");
+            myMap[1][0, 1] = new Case("escalier");
+            myMap[1][9, 8] = new Case("escalier");
+            myMap[1][9, 9] = new Case("escalier");
 
             //etage 3
             //distributeur
@@ -592,6 +582,11 @@ namespace Projet
             myMap[2][4, 3] = new Case("meuble");
             myMap[2][4, 4] = new Case("meuble");
 
+            myMap[2][0, 0] = new Case("escalier");
+            myMap[2][0, 1] = new Case("escalier");
+            myMap[2][9, 8] = new Case("escalier");
+            myMap[2][9, 9] = new Case("escalier");
+
             //etage 4
             myMap[3][0, 9] = new Case("meuble");
             myMap[3][2, 0] = new Case("coffre");
@@ -600,6 +595,11 @@ namespace Projet
             myMap[3][6, 9] = new Case("meuble");
             myMap[3][7, 0] = new Case("meuble");
             myMap[3][7, 9] = new Case("meuble");
+
+            myMap[3][0, 0] = new Case("escalier");
+            myMap[3][0, 1] = new Case("escalier");
+            myMap[3][9, 8] = new Case("escalier");
+            myMap[3][9, 9] = new Case("escalier");
         }
 
         //placement des pièces
@@ -647,27 +647,22 @@ namespace Projet
         }
 
 
-        public void PrintMap(int e, int x, int y)
+        public void PrintMap(int x, int y)
         {
-            string north = "";
-            string south = "";
-            string east = "";
-            string west = "";
+            string north = "  | | \n";
+            string south = "  | | \n";
+            string couloir = "__   __ \n   O \n__   __ \n";
 
-            if (y == 0)
+            if (x == 0)
                 north = "  __ \n";
-            else if (y == 9)
+            else if (x == 9)
                 south = "  __ \n";
-            else
-            {
-                north = "  | | \n";
-                south = "  | | \n";
-            }
-            if (x == 9)
-            {
-                east = "|";
-
-            }
+            if (y == 9)
+                couloir = "__   | \n   O \n__   | \n";
+            else if (y == 0)
+                couloir = "|   __ \n   O \n|   __ \n";
+            //Console.Clear();
+            Console.Write(north + couloir + south);
         }
     }
 }

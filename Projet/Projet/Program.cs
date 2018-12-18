@@ -13,7 +13,9 @@ namespace Projet
             //Map map = new Map();
             //map.Init();
             //Menu menu = new Menu();
-            Console.Write("__ \n ftgyhu");
+            //map.PrintMap(9, 2);
+            Game game = new Game();
+            
             Console.Read();
         }
     }

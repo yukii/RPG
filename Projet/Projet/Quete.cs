@@ -8,11 +8,16 @@ namespace Projet
 {
     class Quete : Personnage
     {
+        //public string name;
+        //public string ph;
+
         private string[] objAsk;
         private string objDrop;
 
         public Quete(string name, string ph, int energy, string[] objets, string objDrop) : base(name, ph, energy)
         {
+            //this.name = name;
+            //this.ph = ph;
             this.objAsk = objets;
             this.objDrop = objDrop;
         }

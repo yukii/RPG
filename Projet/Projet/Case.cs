@@ -64,7 +64,7 @@ namespace Projet
             switch (obj)
             {
                 case "meuble":
-                    return true;
+                    return false;
                 case "distributeur":
                     return false;
                 case "coffre":
@@ -73,5 +73,7 @@ namespace Projet
                     return true;
             }
         }
+
+     
     }
 }
