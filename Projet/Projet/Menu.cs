@@ -30,6 +30,7 @@ ___  _______  ________  _____________
 ======================================
 ");
             Console.WriteLine("Bienvenue en Enfer ^^ :D");
+            Console.ResetColor();
 
             Music();
             int myChoice = PrintMenu(new string[] { "Start", "Load", "Quit" });

@@ -12,12 +12,7 @@ namespace Projet
     {
         static void Main(string[] args)
         {
-            //Map map = new Map();
-            //map.Init();
-            //Menu menu = new Menu();
-            //map.PrintMap(9, 2);
             Game game = new Game();
-
             
             Console.Read();
         }

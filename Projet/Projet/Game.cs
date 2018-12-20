@@ -88,7 +88,19 @@ namespace Projet
                         Bloque(e, x, y + 1);
                     break;
                 case ConsoleKey.Escape:
-                    menu.Sauv(player);
+                    Console.WriteLine("Tu veux sauvegarder ?");
+                    int choice = menu.PrintMenu(new string[] { "oui", "non", "Quitter le jeu" });
+                    switch (choice)
+                    {
+                        case 1:
+                            menu.Sauv(player);
+                            break;
+                        case 3:
+                            menu.Quit();
+                            break;
+                        default:
+                            break;
+                    }
                     break;
                 default:
                     break;
