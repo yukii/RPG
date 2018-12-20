@@ -1,0 +1,8 @@
+C:\Users\Mari\Documents\Cours\Ingesup\C#\Projet\Projet\bin\Debug\music.wav
+C:\Users\Mari\Documents\Cours\Ingesup\C#\Projet\Projet\bin\Debug\Projet.exe.config
+C:\Users\Mari\Documents\Cours\Ingesup\C#\Projet\Projet\bin\Debug\Projet.exe
+C:\Users\Mari\Documents\Cours\Ingesup\C#\Projet\Projet\bin\Debug\Projet.pdb
+C:\Users\Mari\Documents\Cours\Ingesup\C#\Projet\Projet\obj\Debug\Projet.csproj.CoreCompileInputs.cache
+C:\Users\Mari\Documents\Cours\Ingesup\C#\Projet\Projet\obj\Debug\Projet.exe
+C:\Users\Mari\Documents\Cours\Ingesup\C#\Projet\Projet\obj\Debug\Projet.pdb
+C:\Users\Mari\Documents\Cours\Ingesup\C#\Projet\Projet\obj\Debug\Projet.csprojAssemblyReference.cache
