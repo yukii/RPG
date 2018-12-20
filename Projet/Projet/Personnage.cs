@@ -44,9 +44,8 @@ namespace Projet
         }
 
 
-        public static string AsciiFight(string name)
+        public static void AsciiFight(string name)
         {
-            string fight = "";
             switch (name)
             {
                 case "Loic":
@@ -82,6 +81,7 @@ namespace Projet
 .'          /| `-.        . ,'         ,           ,
  '-.__ __ _,','    '`-..___; -...__   ,.'\ ____.___.'
  `" + "'^--'..'   '-`-^-''--    `-^ -'`.'''''''`.,^.`.--''");
+                    
                     break;
                 case "Matthias":
                     Console.ForegroundColor = ConsoleColor.Magenta;
@@ -213,7 +213,7 @@ namespace Projet
                 default:
                     break;
             }
-            return fight;
+            Console.ResetColor();
         }
 
     }
